@@ -119,9 +119,10 @@ function App() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/ai/get-review/",
+        `${process.env.REACT_APP_API_URL}/ai/get-review/`,
         { code }
       );
+
       const aiResponse = response.data?.trim() || "⚠️ AI Response Error";
       const updatedMessages = [
         ...newMessages,
