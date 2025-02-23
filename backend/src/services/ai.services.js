@@ -143,7 +143,7 @@ async function getResponse(prompt, bypassSafety = false) {
 
       // Cache the response
       cache.set(prompt, response);
-      console.log("Cached response for:", prompt);
+      // console.log("Cached response for:", prompt);
 
       return response;
     }

@@ -119,8 +119,10 @@ function App() {
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/ai/get-review/`,
-        { code }
+        `http://localhost:3000/ai/get-review/`,
+        {
+          code,
+        }
       );
 
       const aiResponse = response.data?.trim() || "⚠️ AI Response Error";
@@ -212,7 +214,7 @@ function App() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-6xl font-bold mb-4"
+          className="md:text-6xl text-5xl text-center  font-bold mb-4"
         >
           Welcome to AI CHATBOT
         </motion.h1>
